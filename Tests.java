@@ -7,6 +7,10 @@ public class Tests {
   
   public static void main(String[] args) { 
     int[] array = {1,2,3,4,5,6,7};
+    int[] array2 = {1,2,1,2,4};
+    
+    //testing singleNum
+    System.out.println(singleNum(array2));
     
     //testing duplicates 
     System.out.println(duplicates(array));
@@ -18,6 +22,34 @@ public class Tests {
     }
     System.out.println();
   }
+  
+    /* singleNum(int[] array)
+   * all numbers appear twice, except for 1 number. find that number
+   * 
+   * Test case:
+   * Input: [4,1,2,1,2]
+   * Output: 4
+   */
+  private static int singleNum(int[] array){
+    for (int i = 0; i< array.length; i++){
+    }
+    Arrays.sort(array);
+    
+    if (array[0] != array[1]){
+      return array[0];
+    }
+    
+    for (int i = 1; i<array.length-1; i++){
+      if (array[i] != array[i-1] && array[i] != array[i+1]){
+        return array[i];
+      }
+    }
+    
+    if (array[array.length-1] != array[array.length-2]){
+      return array[array.length-1];
+    }
+    return 0;
+  }//end of method
   
     /* duplicates (int[] origArray)
    * if there are duplicates in an array, then return true
